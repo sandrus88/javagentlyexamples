@@ -18,7 +18,7 @@ int a = 4;    (int a;)
 String s = new String("hello");   (String s;)
 
 3) Definizione metodo:   
-	[visibilita] [staticNonStatic] [tipoRitorno] nomeMetodo([tipoInput in1] [,tipoInput in2] ){
+	[visibilita] [staticNonStatic] [tipoRitorno] nomeMetodo([tipoInput in1] [tipoInput in2] ){
 		// blocco codice da eseguire
 	}
 	private String stampaArray(String[] arr){ codice da eseguire; }
