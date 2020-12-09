@@ -42,9 +42,9 @@ Un metodo e' definito da una serie di istruzioni e di dichiarazioni a cui viene 
 
 ```
 [visibilita] [staticNonStatic] [tipoRitorno] nomeMetodo([tipoInput in1] [tipoInput in2] ){
-		// blocco codice da eseguire
-	}
-```	
+    // blocco codice da eseguire
+}
+```
 
 private String stampaArray(String[] arr){ codice da eseguire; }
 int somma(int a, int b){ codice da eseguire; }
