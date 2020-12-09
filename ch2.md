@@ -1,4 +1,4 @@
-1. Idientificatore
+1. Identificatore
 2. Dichiarazione
 3. Metodi 
 4. Invocare un metodo
