@@ -17,13 +17,12 @@ Una variabile si  _dichiara_  nel seguente modo:
  
 `tipoVariabile nomeVariabile;`
 
-Esempio:
+Esempio: 
 
 ```
 int a;   
 String s;  
 MyObject obj;
-
 ```
 Una variabile si dichiara e si  _inizializza_  nel seguente modo:
  
@@ -37,16 +36,19 @@ String s = new String("hello");
 MyObject obj = new MyObject();
 
 ```
-3) Definizione metodo:   
+##### Definizione metodo  
 
-Un metodo è definito da una serie di istruzioni e di dichiarazioni a cui viene assegnato un nome.	
-	
-	[visibilita] [staticNonStatic] [tipoRitorno] nomeMetodo([tipoInput in1] [tipoInput in2] ){
+Un metodo e' definito da una serie di istruzioni e di dichiarazioni a cui viene assegnato un nome.	
+
+```
+[visibilita] [staticNonStatic] [tipoRitorno] nomeMetodo([tipoInput in1] [tipoInput in2] ){
 		// blocco codice da eseguire
 	}
-	private String stampaArray(String[] arr){ codice da eseguire; }
-	int somma(int a, int b){ codice da eseguire; }
-	public static void main(String[] args){ codice da eseguire; }
+```	
+
+private String stampaArray(String[] arr){ codice da eseguire; }
+int somma(int a, int b){ codice da eseguire; }
+public static void main(String[] args){ codice da eseguire; }
 
 visibilita: public, private, niente (di package)
 staticNonStatic: static => metodo di classe, "niente" metodo di oggetto/instanza)
