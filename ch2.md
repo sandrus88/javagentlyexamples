@@ -1,22 +1,42 @@
-1) Idientificatore
-2) dichiarazione
-3) metodi 
-4) invocare un metodo
-5) costruttore
-6) Variabili, metodi di classe o di instanza. 
-7) Tipi di dati primitivi.
-8) Assegnamento 
-9) Package
-10) Localizzazione Locale
+1. Idientificatore
+2. dichiarazione
+3. metodi 
+4. invocare un metodo
+5. costruttore
+6. Variabili, metodi di classe o di instanza. 
+7. Tipi di dati primitivi.
+8. Assegnamento 
+9. Package
+10. Localizzazione Locale
 
+##### Identificatore 
+tipo della variabile, primitivo oppure oggetto.
 
+##### Dichiarazione
+Una variabile si  _dichiara_  nel seguente modo:
+ 
+`tipoVariabile nomeVariabile;`
 
-1) Idientificatore: tipo della variabile, primitivo oppure oggetto.
-2) Dichiarazione: 
-tipo nomeVariabile = valoreVariabile;   (tipo nomeVariabile;)
-int a = 4;    (int a;)
-String s = new String("hello");   (String s;)
+Esempio:
 
+```
+int a;   
+String s;  
+MyObject obj;
+
+```
+Una variabile si dichiara e si  _inizializza_  nel seguente modo:
+ 
+`tipoVariabile nomeVariabile = valoreVariabile;`
+
+Esempio:
+
+```
+int a = 4;   
+String s = new String("hello");  
+MyObject obj = new MyObject();
+
+```
 3) Definizione metodo:   
 
 Un metodo è definito da una serie di istruzioni e di dichiarazioni a cui viene assegnato un nome.	
