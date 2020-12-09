@@ -1,4 +1,4 @@
-# INDEX
+# Index
 1. Identificatore
 2. Dichiarazione
 3. Metodo 
@@ -8,6 +8,8 @@
 7. Tipi di dati primitivi.
 8. Assegnamento 
 9. Package
+
+# Descrizione
 
 #### 1. Identificatore 
 Tipo della variabile, primitivo oppure oggetto.
@@ -40,7 +42,7 @@ MyObject obj = new MyObject();
 Un metodo e' definito da una serie di istruzioni e di dichiarazioni a cui viene assegnato un nome.    
 
 ```
-[visibilita'] [staticNonStatic] [tipoRitorno] nomeMetodo([tipoInput in1] [tipoInput in2] ){
+[visibilita'] [staticNonStatic] [tipoRitorno] nomeMetodo([tipoInput in1] [, tipoInput in2]) {
     // blocco codice da eseguire
 }
 ```
@@ -62,7 +64,7 @@ Se il il `[tipoRitorno]` e' diverso da `void`, come ultima istruzione del metodo
 Esempio:
 
 ```
-int getCelcius(){
+int getCelcius() {
     return 28;
 }        
 ```
@@ -78,7 +80,7 @@ class MyObject {
     static metodoStatico();
 }
 
-class TestObject{
+class TestObject {
     MyObject obj = new Object();
     
     obj.metodo();
@@ -115,7 +117,7 @@ main(){
     // System.out.println(obj); => 5, 8
 }
 
-class MyObject{
+class MyObject {
     int x;
     int y;
 }
@@ -223,7 +225,7 @@ Esempio:
 
 ```
 package com.sg.mypackage;
-class MyObject{
+class MyObject {
 
 }
 ```
@@ -232,7 +234,7 @@ Esempio altro package:
 ```
 package anotherpackage;
 import com.sg.mypackage.*;
-class MyObject{
+class MyObject {
 
 }
 ```
