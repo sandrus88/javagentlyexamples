@@ -37,7 +37,7 @@ MyObject obj = new MyObject();
 
 ```
 #### 3. Metodo  
-Un metodo e' definito da una serie di istruzioni e di dichiarazioni a cui viene assegnato un nome.	
+Un metodo e' definito da una serie di istruzioni e di dichiarazioni a cui viene assegnato un nome.    
 
 ```
 [visibilita'] [staticNonStatic] [tipoRitorno] nomeMetodo([tipoInput in1] [tipoInput in2] ){
@@ -63,8 +63,8 @@ Esempio:
 
 ```
 int getCelcius(){
-	return 28;
-}		
+    return 28;
+}        
 ```
 #### 4. Invocare un metodo
 Se il metodo e' dell' oggetto, creare prima l'oggetto e poi accedere usando `obj.nomeMetodo();`
@@ -74,15 +74,15 @@ Esempio:
 
 ```
 class MyObject {
-	metodo();
-	static metodoStatico();
+    metodo();
+    static metodoStatico();
 }
 
 class TestObject{
-	MyObject obj = new Object();
-	
-	obj.metodo();
-	MyObject.metodoStatico();
+    MyObject obj = new Object();
+    
+    obj.metodo();
+    MyObject.metodoStatico();
 }
 ```
 Se chiami un metodo e gli passi un oggetto, se il metodo cambia lo stato dell'oggetto, questo si riflettera'  anche all'oggetto dichiarato nel chiamante.
@@ -92,32 +92,32 @@ Esempio chiamata con tipo primitivo:
 
 ```
 void metodo1(int valore) { // 5
-	valore = 20;
+    valore = 20;
 }
 
 main(){
-	int x = 5;
-	metodo1(x);
-	// System.out.println(x); => 5
+    int x = 5;
+    metodo1(x);
+    // System.out.println(x); => 5
 }
 ```
 Esempio chiamata con oggetto:
 
 ```
 void metodo2(MyObj obj2) { // 1, 2
-	obj2.x = 5;
-	obj2.y = 8;
+    obj2.x = 5;
+    obj2.y = 8;
 }
 
 main(){
-	MyObject obj = new MyObject(1, 2);
-	metodo2(obj);
-	// System.out.println(obj); => 5, 8
+    MyObject obj = new MyObject(1, 2);
+    metodo2(obj);
+    // System.out.println(obj); => 5, 8
 }
 
 class MyObject{
-	int x;
-	int y;
+    int x;
+    int y;
 }
 ```
 Se un oggetto viene istanziato dentro una classe, un metodo puo' cambiare il suo stato senza bisogno di passarlo come parametro. 
@@ -126,12 +126,12 @@ Esempio:
 
 ```
 class MainClass {
-	MyObject obj = new MyObject(20, 20);
-	
-	void metodo3() {
-		obj.x = 1;
-		obj.y = 2;
-	}
+    MyObject obj = new MyObject(20, 20);
+    
+    void metodo3() {
+        obj.x = 1;
+        obj.y = 2;
+    }
 }
 
 ```
@@ -143,11 +143,11 @@ Esempio di una classe con 3 costruttori:
 
 ```
 class MyObject {
-	MyObject();
+    MyObject();
 
-	MyObject(int a);
+    MyObject(int a);
 
-	MyObject(String s1, String s2);
+    MyObject(String s1, String s2);
 }
 ```
 
@@ -157,7 +157,7 @@ Esempio:
 
 ```
 class ObjectSenzaCostrutore{
-	// no constructor
+    // no constructor
 }
 
 ObjectSenzaCostrutore obj = new ObjectSenzaCostrutore(); // java chiama il costruttore di default.
@@ -172,17 +172,17 @@ Esempio:
 
 ``` 
 class MyObject {
-	int a1; // variabile di istanza
-	int a2; // variabile di istanza
-	static String x1; // variabile di classe
-	static final String x2; // variabile di classe, costante.
+    int a1; // variabile di istanza
+    int a2; // variabile di istanza
+    static String x1; // variabile di classe
+    static final String x2; // variabile di classe, costante.
 
-	metodo1(){} // metodo di instanza
+    metodo1(){} // metodo di instanza
 
-	static metodo2(){} // metodo di classe
+    static metodo2(){} // metodo di classe
 
-	public static void main(String[] args) {
-	} // metodo di classe
+    public static void main(String[] args) {
+    } // metodo di classe
 }
 ```
 Ogni variabile dichiarata  _final_ , non si puo' piu' cambiare, quindi e' una  _costante_ ;<br/> 
@@ -207,11 +207,11 @@ Esempio:
 
 ```
 class MyObject {
-	int x = 5;
-	double y = 2.3;
-	char x = 'x';
-	String s = "Ciao";
-	boolean b = true;
+    int x = 5;
+    double y = 2.3;
+    char x = 'x';
+    String s = "Ciao";
+    boolean b = true;
 }
 ```
 
