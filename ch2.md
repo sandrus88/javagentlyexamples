@@ -1,7 +1,7 @@
-#INDEX
+# INDEX
 1. Identificatore
 2. Dichiarazione
-3. Metodi 
+3. Metodo 
 4. Invocare un metodo
 5. Costruttore
 6. Variabili, metodi di classe o di instanza. 
@@ -36,7 +36,7 @@ String s = new String("hello");
 MyObject obj = new MyObject();
 
 ```
-#### 3. Definizione metodo  
+#### 3. Metodo  
 Un metodo e' definito da una serie di istruzioni e di dichiarazioni a cui viene assegnato un nome.	
 
 ```
@@ -56,15 +56,15 @@ public static void main(String[] args){ codice da eseguire; }
 `[tipoRitorno]` : void, int, String, MyObject, etc<br/>
 `[tipoInput]` : "niente", int, String, MyObject, etc<br/>
 
-Se il `[tipoRitorno]` e' void il metodo non deve ritornare nessun valore.<br/> 
-Se il il `[tipoRitorno]` e' diverso da void, come ultima istruzione del metodo deve essere presente l'istruzione return che ritorna un valore dello stesso tipo `[tipoRitorno]`.
+Se il `[tipoRitorno]` e' `void` il metodo non deve ritornare nessun valore.<br/> 
+Se il il `[tipoRitorno]` e' diverso da `void`, come ultima istruzione del metodo deve essere presente l'istruzione `return` che ritorna un valore dello stesso tipo `[tipoRitorno]`.
 
 Esempio:
 
 ```
 int getCelcius(){
-	  return 28;
-	}		
+	return 28;
+}		
 ```
 #### 4. Invocare un metodo
 Se il metodo e' dell' oggetto, creare prima l'oggetto e poi accedere usando `obj.nomeMetodo();`
@@ -75,12 +75,12 @@ Esempio:
 ```
 class MyObject {
 	metodo();
-
 	static metodoStatico();
 }
 
 class TestObject{
 	MyObject obj = new Object();
+	
 	obj.metodo();
 	MyObject.metodoStatico();
 }
@@ -91,9 +91,9 @@ Il chiamante in realta'  ha passato al metodo non l'oggetto reale ( _istanza_ ) 
 Esempio chiamata con tipo primitivo:
 
 ```
-	void metodo1(int valore) { // 5
-		valore = 20;
-	}
+void metodo1(int valore) { // 5
+	valore = 20;
+}
 
 main(){
 	int x = 5;
@@ -104,10 +104,10 @@ main(){
 Esempio chiamata con oggetto:
 
 ```
-	void metodo2(MyObj obj2) { // 1, 2
-		obj2.x = 5;
-		obj2.y = 8;
-	}
+void metodo2(MyObj obj2) { // 1, 2
+	obj2.x = 5;
+	obj2.y = 8;
+}
 
 main(){
 	MyObject obj = new MyObject(1, 2);
@@ -127,7 +127,7 @@ Esempio:
 ```
 class MainClass {
 	MyObject obj = new MyObject(20, 20);
-
+	
 	void metodo3() {
 		obj.x = 1;
 		obj.y = 2;
@@ -236,11 +236,3 @@ class MyObject{
 
 }
 ```
-
-
-
-
-
-
-
-
