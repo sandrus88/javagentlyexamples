@@ -18,6 +18,9 @@ int a = 4;    (int a;)
 String s = new String("hello");   (String s;)
 
 3) Definizione metodo:   
+
+Un metodo è definito da una serie di istruzioni e di dichiarazioni a cui viene assegnato un nome.	
+	
 	[visibilita] [staticNonStatic] [tipoRitorno] nomeMetodo([tipoInput in1] [tipoInput in2] ){
 		// blocco codice da eseguire
 	}
@@ -30,6 +33,12 @@ staticNonStatic: static => metodo di classe, "niente" metodo di oggetto/instanza
 tipoRitorno: void, int, String, MyObject, etc
 tipoInput: "niente", int, String, MyObject, etc
 
+Se il [tipoRitorno] è void il metodo non deve ritornare nessun valore. 
+Se il il [tipoRitorno] è diverso da void, come ultima istruzione del metodo deve essere essere presente l'istruzione return che ritorna un valore dello stesso tipo [tipoRitorno].
+int getCelcius(){
+  return 28;
+}		
+
 4) invocare un metodo
 
 Se il metodo è del oggetto, creare prima l'oggetto e poi accedere usando obj.nomeMetodo();
@@ -37,13 +46,53 @@ Se il metodo è di classe, accedere usando nomeClasse.nomeMetodo();
 
 class MyObject{
 	metodo();
-	static metodoStaitico();
+	static metodoStatico();
 }
 
 class TestObject{
 	MyObject obj = new Object();
 	obj.metodo();
-	MyObject.metodoStaitico();
+	MyObject.metodoStatico();
+}
+
+Se chiami un metodo e gli passi un oggetto, se il metodo cambia lo stato dell'oggetto, questo si rifletterà anche all'oggetto dichiarato nel chiamante.
+Il chiamante in realtà ha passato al metodo non l'oggetto reale ( istanza ) ma solo la referenza.
+Esempio:
+
+Chiamata con tipo primitivo:
+void metodo1(int valore){ // 5
+	valore = 20;
+}
+main(){
+	int x = 5;
+	metodo1(x);
+	// System.out.println(x); => 5
+}
+
+Chiamata con oggetto
+
+void metodo2(MyObj obj2){  //1, 2 
+	obj2.x = 5;
+	obj2.y = 8;
+}
+main(){
+	MyObject obj = new MyObject(1, 2);
+	metodo2(obj);
+	// System.out.println(obj); => 5, 8
+}
+class MyObject{
+	int x;
+	int y;
+}
+
+Se un oggetto viene istanziato dentro una classe, un metodo può cambiare il suo stato senza bisogno di passarlo come parametro. 
+class MainClass{
+MyObject obj = new MyObject(20, 20);
+
+void metodo3(){
+obj.x = 1;
+obj.y = 2;
+}
 }
 
 5) costruttore
