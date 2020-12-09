@@ -1,3 +1,4 @@
+#INDEX
 1. Identificatore
 2. Dichiarazione
 3. Metodi 
@@ -8,10 +9,10 @@
 8. Assegnamento 
 9. Package
 
-##### 1. Identificatore 
+#### 1. Identificatore 
 Tipo della variabile, primitivo oppure oggetto.
 
-##### 2. Dichiarazione
+#### 2. Dichiarazione
 Una variabile si  _dichiara_  nel seguente modo:
  
 `tipoVariabile nomeVariabile;`
@@ -35,7 +36,7 @@ String s = new String("hello");
 MyObject obj = new MyObject();
 
 ```
-##### 3. Definizione metodo  
+#### 3. Definizione metodo  
 Un metodo e' definito da una serie di istruzioni e di dichiarazioni a cui viene assegnato un nome.	
 
 ```
@@ -62,18 +63,19 @@ Esempio:
 
 ```
 int getCelcius(){
-  return 28;
-}		
+	  return 28;
+	}		
 ```
-##### 4. Invocare un metodo
+#### 4. Invocare un metodo
 Se il metodo e' dell' oggetto, creare prima l'oggetto e poi accedere usando `obj.nomeMetodo();`
 Se il metodo e' di classe, accedere usando `nomeClasse.nomeMetodo();`
 
 Esempio:
 
 ```
-class MyObject{
+class MyObject {
 	metodo();
+
 	static metodoStatico();
 }
 
@@ -89,9 +91,10 @@ Il chiamante in realta'  ha passato al metodo non l'oggetto reale ( _istanza_ ) 
 Esempio chiamata con tipo primitivo:
 
 ```
-void metodo1(int valore){ // 5
-	valore = 20;
-}
+	void metodo1(int valore) { // 5
+		valore = 20;
+	}
+
 main(){
 	int x = 5;
 	metodo1(x);
@@ -101,15 +104,17 @@ main(){
 Esempio chiamata con oggetto:
 
 ```
-void metodo2(MyObj obj2){  //1, 2 
-	obj2.x = 5;
-	obj2.y = 8;
-}
+	void metodo2(MyObj obj2) { // 1, 2
+		obj2.x = 5;
+		obj2.y = 8;
+	}
+
 main(){
 	MyObject obj = new MyObject(1, 2);
 	metodo2(obj);
 	// System.out.println(obj); => 5, 8
 }
+
 class MyObject{
 	int x;
 	int y;
@@ -120,25 +125,28 @@ Se un oggetto viene istanziato dentro una classe, un metodo puo' cambiare il suo
 Esempio:
 
 ```
-class MainClass{
-MyObject obj = new MyObject(20, 20);
+class MainClass {
+	MyObject obj = new MyObject(20, 20);
 
-void metodo3(){
-obj.x = 1;
-obj.y = 2;
+	void metodo3() {
+		obj.x = 1;
+		obj.y = 2;
+	}
 }
-}
+
 ```
 
-###### 5. Costruttore
+#### 5. Costruttore
 Il costruttore e' un  metodo "speciale" che non ha valore di ritorno e prende il nome della classe.
 
 Esempio di una classe con 3 costruttori: 
 
 ```
-class MyObject{
+class MyObject {
 	MyObject();
+
 	MyObject(int a);
+
 	MyObject(String s1, String s2);
 }
 ```
@@ -157,46 +165,48 @@ ObjectSenzaCostrutore obj = new ObjectSenzaCostrutore(); // java chiama il costr
 La visibilita' del costruttore puo' essere private, public o "niente" di package.<br/>
 Non puo' essere  _static_ ; non puo' essere  _final_ .
 
-##### 6. Variabili, metodi di classe o di instanza. 
+#### 6. Variabili, metodi di classe o di instanza
 Le variabili e metodi di classe sono quelli preceduti da  _static_ . 
 
 Esempio:
 
 ``` 
-class MyObject{
-	int a1;   //variabile di istanza
-	int a2;   //variabile di istanza
-	static String x1;    //variabile di classe
-	static final String x2;     //variabile di classe, costante.
+class MyObject {
+	int a1; // variabile di istanza
+	int a2; // variabile di istanza
+	static String x1; // variabile di classe
+	static final String x2; // variabile di classe, costante.
 
-	metodo1(){}  // metodo di instanza
-	static metodo2(){}  // metodo di classe 
-	public static void main(String[] args){}  // metodo di classe 
+	metodo1(){} // metodo di instanza
+
+	static metodo2(){} // metodo di classe
+
+	public static void main(String[] args) {
+	} // metodo di classe
 }
 ```
 Ogni variabile dichiarata  _final_ , non si puo' piu' cambiare, quindi e' una  _costante_ ;<br/> 
 Ogni metodo dichiarato  _final_ , non si puo' piu' cambiare, ovvero non si puo' riscrivere nelle sottoclassi.
 
-##### 7. Tipi di dati primitivi.
+#### 7. Tipi di dati primitivi
 Sono i dati semplici che non possono essere decomposti. Si misurano in  _bit_ che e' l' unita' piu' piccola del compilatore ( puo' valere 0 oppure 1; true oppure false).
 
-Sono:<br/>
-`boolen b;` vale 1 bit (true o false)<br/>
-`byte b;` vale 8 bit, 2^8 = 256 [-128, 127]<br/>
-`short sh;` vale 16 bit, 2^16 = 65536 [-32768, 32767] (numeri interi)<br/>
-`char c;` vale 16 bit, 2^16 = 65536 [-32768, 32767] (singolo carattere di una Stringa)<br/>
-`int i;` vale 32 bit, 2^32 = 4_294_967_296 [-2_147_483_648, 2_147_483_647] (numeri interi)<br/>
-`float f;` vale 32 bit, 2^32 = 4_294_967_296 [-2_147_483_648, 2_147_483_647] (numeri reali)<br/>
-`double d;` vale 64 bit, 2^64 = 18_446_744_073_709_551_616 [-9_223_372_036_854_775_808, 9_223_372_036_854_775_808] (numeri reali)<br/>
-`long l;` vale 64 bit, 2^64 = 18_446_744_073_709_551_616 [-9_223_372_036_854_775_808, 9_223_372_036_854_775_808] (numeri interi)
+- `boolean b;` vale 1 bit (true o false)<br/>
+- `byte b;` vale 8 bit, 2^8 = 256 [-128, 127]<br/>
+- `short sh;` vale 16 bit, 2^16 = 65536 [-32768, 32767] (numeri interi)<br/>
+- `char c;` vale 16 bit, 2^16 = 65536 [-32768, 32767] (singolo carattere di una Stringa)<br/>
+- `int i;` vale 32 bit, 2^32 = 4_294_967_296 [-2_147_483_648, 2_147_483_647] (numeri interi)<br/>
+- `float f;` vale 32 bit, 2^32 = 4_294_967_296 [-2_147_483_648, 2_147_483_647] (numeri reali)<br/>
+- `double d;` vale 64 bit, 2^64 = 18_446_744_073_709_551_616 [-9_223_372_036_854_775_808, 9_223_372_036_854_775_808] (numeri reali)<br/>
+- `long l;` vale 64 bit, 2^64 = 18_446_744_073_709_551_616 [-9_223_372_036_854_775_808, 9_223_372_036_854_775_808] (numeri interi)
 
-##### 8. Assegnamento
+#### 8. Assegnamento
 L'assegnamento avviene tramite il simbolo =, e viene utilizzato per dare un valore a una variabile o a un oggetto.
 
 Esempio:
 
 ```
-class MyObject{
+class MyObject {
 	int x = 5;
 	double y = 2.3;
 	char x = 'x';
@@ -205,7 +215,7 @@ class MyObject{
 }
 ```
 
-##### 9. Package
+#### 9. Package
 Un package e' una collezione di classi logicamente connesse, che possono interagire tra di loro. Per accedere ad un package da altro package si utilizza la seguente formula<br/>
 `import [nomePackage].*`
 

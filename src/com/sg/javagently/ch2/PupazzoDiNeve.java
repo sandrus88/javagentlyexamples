@@ -50,6 +50,5 @@ class PupazzoDiNeve extends Frame {
 
 		g.drawString("Questo è un pupazzo di neve", 120, 300);
 	}
-}
-	
 
+}
