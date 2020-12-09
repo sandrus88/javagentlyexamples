@@ -9,10 +9,10 @@
 9. Package
 10. Localizzazione Locale
 
-##### Identificatore 
+##### 1. Identificatore 
 tipo della variabile, primitivo oppure oggetto.
 
-##### Dichiarazione
+##### 2. Dichiarazione
 Una variabile si  _dichiara_  nel seguente modo:
  
 `tipoVariabile nomeVariabile;`
