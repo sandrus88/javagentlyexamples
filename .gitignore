@@ -3,6 +3,6 @@
 .classpath
 .project
 /bin/
-/src/
-/com/
-/sg/
+/src
+/com
+/sg
