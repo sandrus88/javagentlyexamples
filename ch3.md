@@ -1,7 +1,9 @@
+# Index
 1. Tipi primitivi nello specifico.
 2. Ripetizione con cicli for.
-3. Passaggio dei parametri.
-4. Class Study 1: Talloncini del prezzo.
+3. Class Study 1: Talloncini del prezzo.
+
+# Descrizione
 
 #### 1. Tipi primitivi nello specifico
 **BOOLEAN**<br/>
@@ -83,11 +85,7 @@ for ( i = 0; i < 5; i++ ) {
     System.out.println(i);
 }
 ```
-
-#### 3. Passaggio dei parametri
-
-
-#### 4. Class Study 1: Talloncini del prezzo
+#### 3. Class Study 1: Talloncini del prezzo
 **Risolvi il seguente problema:**</br>
 La High School di Savanna sta organizzando una festa e ha fissato il prezzo dei cibi e delle bevande in uno, due, cinque o otto graz. Si vorrebbero disegnare con il computer i relativi talloncini del prezzo. I talloncini G5 e G8 dovrebbero essere più grandi e di maggiore impatto dei talloncini G1 e G2.
 
@@ -139,4 +137,36 @@ class Tickets {
 	}
 }
 ```
-che stamperà vedi [Tickets.java](sandrus88/javagentlyexamples\src\com\sg\javagently\ch3\Tickets.java).
+che stamperà:
+
+```
+Prezzi suggeriti per la festa
+
+-----------
+|222222222|
+|222222222|
+|222222222|
+-----------
+
+-----------
+|111111111|
+|111111111|
+|111111111|
+-----------
+
+===============
+=5555555555555=
+=5555555555555=
+=5555555555555=
+=5555555555555=
+=5555555555555=
+===============
+
+===============
+=8888888888888=
+=8888888888888=
+=8888888888888=
+=8888888888888=
+=8888888888888=
+===============
+```
