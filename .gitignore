@@ -1,6 +1,5 @@
 
 
-/javagently/
-.classpath
-.project
-/bin/
+
+*.classpath
+
