@@ -3,6 +3,10 @@ package com.sg.javagently.ch2;
 import java.awt.*;
 import java.awt.event.*;
 
+/*
+ * Illustra un semplice output grafico raffigurante un pupazzo di neve
+ */
+
 class PupazzoDiNeve extends Frame {
 
 	public PupazzoDiNeve() {

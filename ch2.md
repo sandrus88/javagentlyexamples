@@ -4,10 +4,11 @@
 3. Metodo 
 4. Invocare un metodo
 5. Costruttore
-6. Variabili, metodi di classe o di instanza. 
-7. Tipi di dati primitivi.
+6. Variabili, metodi di classe o di instanza 
+7. Tipi di dati primitivi
 8. Assegnamento 
 9. Package
+10.Localizzazione dei computer
 
 # Descrizione
 
@@ -237,4 +238,62 @@ import com.sg.mypackage.*;
 class MyObject {
 
 }
+```
+#### 10. Localizzazione dei computer
+In Java, dentro il package `java.util`, esiste una classe `Locale` che abilita un programma a leggere e stampare la configurazione del sistema operativo. Essa si presenta cosi':
+
+```
+public final class Locale extends Object implements Cloneable, Serializable {
+//costruttori
+	public Locale(String language);
+	public Locale(String language, String country);
+	public Locale(String language, String country, String variant);
+
+//costanti
+	public static final Locale CANADA;
+	public static final Locale CANADA_FRENCH;
+	public static final Locale CHINA;
+	public static final Locale CHINESE;
+	public static final Locale ENGLISH;
+	public static final Locale FRANCE;
+	public static final Locale FRENCH;
+	public static final Locale GERMAN;
+	public static final Locale GERMANY;
+	public static final Locale ITALIAN;
+	public static final Locale ITALY;
+	public static final Locale JAPAN;
+	public static final Locale JAPANESE;
+	public static final Locale KOREA;
+	public static final Locale KOREAN;
+	public static final Locale PRC;
+	public static final Locale SIMPLIFIED_CHINESE;
+	public static final Locale TAIWAN;
+	public static final Locale TRADITIONAL_CHINESE;
+	public static final Locale UK;
+	public static final Locale US;
+
+//metodi di classe 
+	public static synchronized Locale getDefault();
+	public static synchronized void setDefault(Locale newLocale);
+
+//metodi di istanza
+	public Object clone();
+	public boolean equals(Object obj);
+	public String getCountry();
+	public final String getDisplayCountry();
+	public String getDisplayCountry(Locale inLocale);
+	public String getLanguage();
+	public String getDisplayLanguage(Locale inLocale);
+	public final String getDisplayLanguage();
+	public String getDisplayName(Locale inLocale);
+	public final String getDisplayName();
+	public String getVariant();
+	public String getDisplayVariant(Locale inLocale);
+	public final String getDisplayVariant();
+	public String getISO3Country() throws MissingResourceException;
+	public String getISO3Language() throws MissingResourceException;
+	public synchronized int hashCode();
+	public final String toString();
+}
+
 ```
