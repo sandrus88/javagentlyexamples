@@ -139,4 +139,4 @@ class Tickets {
 	}
 }
 ```
-che stamperà vedi [Tickets.java](Tickets.java).
+che stamperà vedi [Tickets.java](src.com.sg.javagently.ch3.Tickets.java).
