@@ -1,5 +1,8 @@
 
 
-*.classpath
+.classpath
 .project
 /bin/
+/src/
+/com/
+/sg/
