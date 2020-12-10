@@ -1,6 +1,5 @@
 
 
-.src/com/sg/
-.classpath
+*.classpath
 .project
 /bin/
