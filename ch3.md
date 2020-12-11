@@ -42,7 +42,7 @@ Il char viene rappresentato tra due apici ' '. Esempio char a = 'a';
 
 **TIPI NUMERICI**<br/>
 Vedi punto 7) del file [ch2.md](ch2.md).<br/>
-Per incrementare o decrementare una variabile numerica esistono questi assegnamenti:
+Per incrementare o decrementare una variabile numerica esistono questi assegnamenti:</br>
 `nomeVariabile++;` ( incrementa di 1 )<br/>
 `nomeVariabile--;` ( decrementa di 1 )<br/>
 `nomeVariabile += nomeAltraVariable;` ( addiziona nomeAltraVariable a nomeVariabile )<br/>
