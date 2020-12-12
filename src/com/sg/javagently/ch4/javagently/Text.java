@@ -4,14 +4,28 @@ import java.io.*;
 
 class Text {
 
-	static void prompt(String s) {
+	/**
+	 * Stampa a video il messaggio passato come parametro
+	 * @param msg messaggio da far stampare a video
+	 */
+	static void prompt(String msg) {
 
 	}
 
+	/**
+	 * Dato un BufferedReader come input, apre lo stream e aspetta che l'utente inserisce un intero.
+	 * @param in BufferedReader a quale aprire lo stream e leggere il valore inserito dalla tastiera
+	 * @return il valore intero inserito dall'utente
+	 */
 	static int readInt(BufferedReader in) {
 		return 0;
 	}
 
+	/**
+	 * Dato un BufferedReader come input, apre lo stream e aspetta che l'utente inserisce un intero.
+	 * @param in BufferedReader a quale aprire lo stream e leggere il valore inserito dalla tastiera
+	 * @return il valore double inserito dall'utente
+	 */
 	static double readDouble(BufferedReader in) {
 		return 0;
 	}
@@ -31,7 +45,13 @@ class Text {
 	String writeDouble(double number, int align, int frac) {
 		return null;
 	}
-	
+
+	/**
+	 * Metodo open, dato un InputStream crea e ritorna un BufferedReader
+	 *
+	 * @param in InputStream da aprire
+	 * @return BufferedReader per l'input stream passato in input
+	 */
 	static BufferedReader open(InputStream in) {
 		return null;
 	}
