@@ -4,23 +4,21 @@ import static java.lang.System.in;
 import java.io.*;
 import com.sg.javagently.ch4.javagently.*;
 
-public class SommaSequenzaNum {
+public class SommaSequenzaNumStatic {
 	public static void main(String[] args) throws IOException {
 		int count;
 		double total = 0;
 		double number;
-		
-		Text text = new Text();
-		BufferedReader bufferReader = new BufferedReader(new InputStreamReader(System.in));
-//		bufferReader = text.open(System.in);
 
-		System.out.println("****** Somma di numeri ******");
+		BufferedReader bufferReader = TextStatic.open(System.in);
 
-		text.prompt("Quanti numeri?");
-		count = text.readInt(bufferReader);
+		TextStatic.prompt("****** Somma di numeri ******");
+		TextStatic.prompt("Quanti numeri?");
+		count = TextStatic.readInt(bufferReader);
+		System.out.println(count);
 		for (int i = 1; i <= count; i++) {
 			System.out.print(i + "> ");
-			number = text.readDouble(bufferReader);
+			number = TextStatic.readDouble(bufferReader);
 			total += number;
 		}
 

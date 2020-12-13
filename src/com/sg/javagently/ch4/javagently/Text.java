@@ -8,7 +8,7 @@ class Text {
 	 * Stampa a video il messaggio passato come parametro
 	 * @param msg messaggio da far stampare a video
 	 */
-	static void prompt(String msg) {
+	void prompt(String msg) {
 
 	}
 
@@ -17,7 +17,7 @@ class Text {
 	 * @param in BufferedReader a quale aprire lo stream e leggere il valore inserito dalla tastiera
 	 * @return il valore intero inserito dall'utente
 	 */
-	static int readInt(BufferedReader in) {
+	int readInt(BufferedReader in) {
 		return 0;
 	}
 
@@ -26,7 +26,7 @@ class Text {
 	 * @param in BufferedReader a quale aprire lo stream e leggere il valore inserito dalla tastiera
 	 * @return il valore double inserito dall'utente
 	 */
-	static double readDouble(BufferedReader in) {
+	double readDouble(BufferedReader in) {
 		return 0;
 	}
 
@@ -52,7 +52,7 @@ class Text {
 	 * @param in InputStream da aprire
 	 * @return BufferedReader per l'input stream passato in input
 	 */
-	static BufferedReader open(InputStream in) {
+	BufferedReader open(InputStream in) {
 		return null;
 	}
 	
@@ -60,7 +60,7 @@ class Text {
 		return null;
 	}
 	
-//	printWriter create(String filename) {
-//		return null;
-//	}
+	PrintWriter create(String filename) {
+	return null;
+	}
 }
