@@ -1,4 +1,4 @@
-package com.sg.javagently.ch4.javagently;
+package com.sg.javagently.ch4;
 
 import java.io.*;
 

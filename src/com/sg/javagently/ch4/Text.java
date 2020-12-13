@@ -1,8 +1,8 @@
-package com.sg.javagently.ch4.javagently;
+package com.sg.javagently.ch4;
 
 import java.io.*;
 
-class TextStatic {
+class Text {
 
 	/**
 	 * Stampa a video il messaggio passato come parametro
@@ -33,8 +33,8 @@ class TextStatic {
 	 * @throws IOException se la comunicazione del inputStream del bufferedReader si interrompe
 	 */
 	public static int readInt(BufferedReader bufferedReader) throws IOException {
-		int x = bufferedReader.read(); 
-		System.out.println("x: " + x);
+		String s = bufferedReader.readLine(); 
+		int x = Integer.parseInt(s);
 		return x;
 	}
 
@@ -46,7 +46,8 @@ class TextStatic {
 	 * @throws IOException se la comunicazione del inputStream del bufferedReader si interrompe
 	 */
 	public static double readDouble(BufferedReader bufferedReader) throws IOException {
-		double x = bufferedReader.read(); 
+		String s = bufferedReader.readLine(); 
+		double x = Double.parseDouble(s);
 		return x;
 	}
 
