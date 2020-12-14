@@ -24,6 +24,18 @@ class Text {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
 		return bufferedReader;
 	}
+	
+	/**
+	 * Metodo open crea e ritorna un BufferedReader costruito con il file passato come parametro.
+	 * 
+	 * @param nomeFile il nome del file
+	 * @return BufferedReader costruito con il file passato come parametro 
+	 * @throws FileNotFoundException se il file non esiste nel file system
+	 */
+	public static BufferedReader open(String nomeFile) throws FileNotFoundException {
+		BufferedReader bufferedReader = new BufferedReader(new FileReader(nomeFile));
+		return bufferedReader;
+	}
 
 	/**
 	 * Dato un BufferedReader come input, leggiamo il valore intero dal suo stream.
@@ -50,5 +62,20 @@ class Text {
 		double x = Double.parseDouble(s);
 		return x;
 	}
+	
+	public static char readChar(BufferedReader bufferedReader) throws IOException {
+		String s = bufferedReader.readLine(); 
+		char c = s.next().charAt(0);
+		return c;
+	}
 
+	public static String readLineFile(BufferedReader bufferedReader) throws IOException {
+		String s = bufferedReader.readLine(); 
+		return s;
+	}
+	
+	public static PrintWriter create(String nomeFile) throws IOException {
+		PrintWriter printWriter = new PrintWriter(new FileWriter(nomeFile));
+		return printWriter;
+	}
 }
