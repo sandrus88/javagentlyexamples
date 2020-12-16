@@ -63,12 +63,26 @@ class Text {
 		return x;
 	}
 	
+	/**
+	 * Dato un BufferedReader come input, leggiamo il valore char dal suo stream.
+	 * 
+	 * @param bufferedReader BufferedReader dal quale leggere un char
+	 * @return il valore char letto dal bufferedReader
+	 * @throws IOException se la comunicazione del inputStream del bufferedReader si interrompe
+	 */
 	public static char readChar(BufferedReader bufferedReader) throws IOException {
 		String s = bufferedReader.readLine(); 
 		char c = s.charAt(0);
 		return c;
 	}
-
+	
+	/**
+	 * Dato un BufferedReader come input, leggiamo una stringa dal suo stream.
+	 * 
+	 * @param bufferedReader BufferedReader dal quale leggere una stringa
+	 * @return la stringa dal bufferedReader
+	 * @throws IOException se la comunicazione del inputStream del bufferedReader si interrompe
+	 */
 	public static String readLineFile(BufferedReader bufferedReader) throws IOException {
 		String s = bufferedReader.readLine(); 
 		return s;

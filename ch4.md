@@ -72,4 +72,52 @@ else
 	grade = 'E';
 ```
 #### 4. Eccezioni
+Un'eccezione e' un oggetto finalizzato a segnalare che si sono verificate condizioni insolite.
+Per usare le eccezioni sono necessarie tre azioni:</br>
+**1) Try**, si crea un blocco dove potrebbero verificarsi delle eccezioni e utilizzare la keyword `try`(prova) prima del blocco;</br>
+**2) Catch**, far seguire il `try` da uno o piu' gestori preceduti dalla keyword `catch`(cattura);</br>
+Esempio:
+
+```
+try
+{
+ /* operazione critica */
+}
+catch (Exception ex)
+{
+ /* gestione dell’eccezione */
+}
+```
+**3) Throw**, se l'eccezione non e' trattata o e' parzialmente trattata, la si puo' passare al metodo chiamante tramite la keyword `throws` con il nome dell'eccezione (generalmente le eccezioni si scrivono accanto al `main`).
+
+Esempio:
+
+```
+public static void main(String[] args) throws Exception ex {
+
+}
+```
+Per costruire eccezioni personalizzate prima si dichiara cosi':
+
+```
+class nome extends Exception {
+	public nome() {
+	}
+	public nome(String s) {
+	}
+}
+```
+Dopo averla dichiarata, adesso si puo' creare e lanciare cosi':
+
+```
+throw new nome("messaggio");
+
+catch(nome e) {
+	
+}	
+```
 #### 5. Creazione e uso dei package
+Per creare un package bisogna:</br>
+**1)** Creare una directory col nome del package `nomePackage`;</br>
+**2)** Dentro questa directory compilate un file java `nomeFile.java`;</br>
+**3)** Se compilando, all'interno della directory, si creano due file `nomeFile.java` e `nomeFile.class`, allora il package e' stato creato.
