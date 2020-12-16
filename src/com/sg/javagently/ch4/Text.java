@@ -65,7 +65,7 @@ class Text {
 	
 	public static char readChar(BufferedReader bufferedReader) throws IOException {
 		String s = bufferedReader.readLine(); 
-		char c = s.next().charAt(0);
+		char c = s.charAt(0);
 		return c;
 	}
 
