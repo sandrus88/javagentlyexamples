@@ -2,7 +2,7 @@ package com.sg.javagently.ch4;
 
 import java.io.*;
 
-class Text {
+public class Text {
 
 	/**
 	 * Stampa a video il messaggio passato come parametro
@@ -64,6 +64,17 @@ class Text {
 	}
 	
 	/**
+	 * Il metodo writeDouble 
+	 * 
+	 * @param double number, int align, int frac
+	 * @return stringa
+	 */
+//	public static String writeDouble(double number, int align, int frac) {
+//		String s = bufferedReader.readLine(); 
+//		return s;
+//	}
+	
+	/**
 	 * Dato un BufferedReader come input, leggiamo il valore char dal suo stream.
 	 * 
 	 * @param bufferedReader BufferedReader dal quale leggere un char
@@ -83,7 +94,7 @@ class Text {
 	 * @return la stringa dal bufferedReader
 	 * @throws IOException se la comunicazione del inputStream del bufferedReader si interrompe
 	 */
-	public static String readLineFile(BufferedReader bufferedReader) throws IOException {
+	public static String readLine(BufferedReader bufferedReader) throws IOException {
 		String s = bufferedReader.readLine(); 
 		return s;
 	}

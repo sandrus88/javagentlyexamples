@@ -41,17 +41,21 @@ Per i file di output è obbligatorio chiuderli prima della fine del programma per
 Con l'istruzione `if` si pone la condizione e può essere o true o false, se e' true, viene eseguita l'istruzione seguente; se invece e' false, salta direttamente all'altra istruzione preceduta da `else`. Quest'ultima e' opzionale, cioe' non deve essere per forza presente.
 
 ```
-if (condizione)
-	istruzione;
-else istruzione2;
+if (condizione){
+	istruzioni;
+} else {
+	istruzione2;
+}   
 ```
 
 Esempio:
 
 ```
-if (number>=0)
-System.out.println("Postitivo")
-else System.out.println("Postitivo");
+if (number>=0) {
+	System.out.println("Positivo")
+} else {
+	System.out.println("Negativo");
+}
 ```
 Avvolte possono esserci più condizioni e dunque si utilizzeranno piu' sequenze di `else if`.
 
@@ -60,64 +64,65 @@ Esempio:
 ```
 int marks;
 char grade;
-if 		(marks >= 80)
+if (marks >= 80) {
 	grade = 'A';
-else if	(marks >= 70)
+} else if (marks >= 70) {
 	grade = 'B';
-else if	(marks >= 60)
+} else if	(marks >= 60) {
 	grade = 'C';
-else if	(marks >= 50)
+} else if	(marks >= 50) {
 	grade = 'D';
-else 
+} else { 
 	grade = 'E';
+}	
 ```
 #### 4. Eccezioni
 Un'eccezione e' un oggetto finalizzato a segnalare che si sono verificate condizioni insolite.
 Per usare le eccezioni sono necessarie tre azioni:</br>
-**1) Try**, si crea un blocco dove potrebbero verificarsi delle eccezioni e utilizzare la keyword `try`(prova) prima del blocco;</br>
-**2) Catch**, far seguire il `try` da uno o piu' gestori preceduti dalla keyword `catch`(cattura);</br>
+1) **Try**, si crea un blocco dove potrebbero verificarsi delle eccezioni e utilizzare la keyword `try`(prova) prima del blocco;</br>
+2) **Catch**, far seguire il `try` da uno o piu' gestori preceduti dalla keyword `catch`(cattura);</br>
 Esempio:
 
 ```
-try
-{
+try {
  /* operazione critica */
-}
-catch (Exception ex)
-{
+} catch (Exception ex) {
  /* gestione dell’eccezione */
 }
 ```
-**3) Throw**, se l'eccezione non e' trattata o e' parzialmente trattata, la si puo' passare al metodo chiamante tramite la keyword `throws` con il nome dell'eccezione (generalmente le eccezioni si scrivono accanto al `main`).
+3) **Throw**, se l'eccezione non e' trattata o e' parzialmente trattata, la si puo' passare al metodo chiamante tramite la keyword `throws` con il nome dell'eccezione (generalmente le eccezioni si scrivono accanto al `main`).
 
 Esempio:
 
 ```
-public static void main(String[] args) throws Exception ex {
+public static void main(String[] args) throws Exception {
 
 }
 ```
 Per costruire eccezioni personalizzate prima si dichiara cosi':
 
 ```
-class nome extends Exception {
-	public nome() {
+class MyException extends Exception {
+	public MyException() {
 	}
-	public nome(String s) {
+	public MyException(String s) {
 	}
 }
 ```
 Dopo averla dichiarata, adesso si puo' creare e lanciare cosi':
 
 ```
-throw new nome("messaggio");
+throw new MyException("messaggio");
+```
+E intercettarla cosi':
 
-catch(nome e) {
+```
+catch(MyException e) {
 	
 }	
 ```
 #### 5. Creazione e uso dei package
 Per creare un package bisogna:</br>
-**1)** Creare una directory col nome del package `nomePackage`;</br>
-**2)** Dentro questa directory compilate un file java `nomeFile.java`;</br>
-**3)** Se compilando, all'interno della directory, si creano due file `nomeFile.java` e `nomeFile.class`, allora il package e' stato creato.
+1) Creare una directory col nome del package `nomePackage`;</br>
+2) Dentro questa directory compilate un file java `nomeFile.java`;</br>
+3) Se compilando, all'interno della directory, si creano due file `nomeFile.java` e `nomeFile.class`, allora il package e' stato creato.

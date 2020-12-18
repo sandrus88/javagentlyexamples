@@ -8,7 +8,7 @@ public class InputDaFile {
 		
 		BufferedReader bufferReaderFin = Text.open("numbers.txt");
 
-		String line = Text.readLineFile(bufferReaderFin);
+		String line = Text.readLine(bufferReaderFin);
 
 		Text.prompt("Letto dal file la riga : " + line);
 	}

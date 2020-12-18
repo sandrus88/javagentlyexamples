@@ -4,4 +4,6 @@ In questo progetto cerchero' di fare un riassunto dei concetti presenti nel libr
 
 ## Capitoli
 * [Capitolo 2](ch2.md)
-* [Capitolo 3](ch3.txt)
+* [Capitolo 3](ch3.md)
+* [Capitolo 4](ch4.md)
+* [Capitolo 5](ch5.md)
