@@ -64,15 +64,22 @@ public class Text {
 	}
 	
 	/**
-	 * Il metodo writeDouble 
+	 * Ritorna una stringa che rappresenta il decimale passato in input
 	 * 
-	 * @param double number, int align, int frac
-	 * @return stringa
+	 * @param number il numero da formattare e ritornare come stringa.
+	 * @param align indica il nuero minimo di caratteri che devono essere usati per stampare il numero.
+	 * 				Se il numero e' 123, e align e' 6, nell'output ci saranno 3 spazi prima del numero.
+	 * 				Se il numero e' 4, e align e' 6, nell'output ci saranno 5 spazi prima del numero.
+	 * 				Se il numero e' 123, e align e' 3, nell'output ci saranno 0 spazi prima del numero.
+	 * @param frac 	l'esatto numero di cifre decimali. Se la parte decimale e' piu' lunga di frac, tronca il resto.
+	 * 				Se la parte decimale e' piu' corta di frac, aggiunge zeri finche' si arriva alla lunghezza di frac.
+	 * 				Se il numero e' intero, si costruisce il suo decimale con tanti zeri quanto e' frac.
+	 * @return una stringa che rappresenta il numero double formattato con lunghezza passata in parametro.
 	 */
-//	public static String writeDouble(double number, int align, int frac) {
-//		String s = bufferedReader.readLine(); 
-//		return s;
-//	}
+	public static String writeDouble(double number, int align, int frac) {
+		String s = number + ""; 
+		return s;
+	}
 	
 	/**
 	 * Dato un BufferedReader come input, leggiamo il valore char dal suo stream.

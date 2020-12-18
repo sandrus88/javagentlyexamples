@@ -33,12 +33,15 @@ Esempio:
 
 ```
 switch (condizione) { 
-	case 1: istruzione1; 
-	break; 
-	case 2: istruzione2; 
-	break; 
+	case 1: 
+		istruzione1; 
+		break; 
+	case 2: 
+		istruzione2; 
+		break; 
 	... 
-	default: istruzione_default; 
+	default: 
+		istruzione_default; 
 }
 ```
 Lo `switch` si usa solo in presenza di una condizione che dia un `int` o un `char`. Allo stesso modo `case` dovra' esserlo.
@@ -49,19 +52,23 @@ Esempio pratico:
 ```
 public class MyClass {
 	public static void main(String[] args) {
-	String mese = "02";
-	String nome;
+		String mese = "02";
+		String nome;
 
 		switch (mese) {
-			case "01": nome = "Gennaio" ;
+			case "01": 
+				nome = "Gennaio" ;
 		   	break;
-			case "02": nome = "Febbraio" ;
+			case "02": 
+				nome = "Febbraio" ;
 		   	break;
-			case "03": nome = "Marzo";
+			case "03": 
+				nome = "Marzo";
 		   	break;
-			default: nome = "Altri mesi";
+			default: 
+				nome = "Altri mesi";
 		}
-	System.out.print.ln("fascia = " + nome);
+		System.out.print.ln("fascia = " + nome);
 	}
 }
 ```
@@ -90,19 +97,23 @@ public class MorraCinese {
 
 	void winner() {
 		switch (myChoice) {
-		case 0:	report('R', 'S', 'P');
-		break;
-		case 1:	report('S', 'P', 'R');
-		break;
-		case 2:	report('P', 'R', 'S');
-		break;
+			case 0:	
+				report('R', 'S', 'P');
+				break;
+			case 1:	
+				report('S', 'P', 'R');
+				break;
+			case 2:	
+				report('P', 'R', 'S');
+				break;
 		}
 	}
 
 	void makeMyChoice() {
 		int next = dice.nextInt();
-		if (next < 0)
+		if (next < 0) {
 			next = -next;
+		}	
 		myChoice = next % 3;
 	}
 
@@ -111,20 +122,22 @@ public class MorraCinese {
 			Text.prompt("Scegli tra R S P o Q per smettere?");
 			yourChoice = Text.readChar(in);
 		} while (yourChoice != 'R' & yourChoice != 'S' & yourChoice != 'P' & yourChoice != 'Q');
-		if (yourChoice != 'Q')
+		if (yourChoice != 'Q') {
 			System.out.println("Tu hai scelto " + yourChoice + " e ");
+		}
 		return yourChoice;
 	}
 
 	private static void report(char me, char Iwin, char youWin) {
 		System.out.println("Io ho scelto " + me);
-		if (yourChoice == Iwin)
+		if (yourChoice == Iwin) {
 			System.out.println("Ho vinto");
-		else if (yourChoice == youWin)
+		} else if (yourChoice == youWin) {
 			System.out.println("Hai vinto");
-		else
+		} else {
 			System.out.println("Siamo pari");
-	}
+	 	}
+	}	
 
 	public static void main(String[] args) throws IOException {
 
@@ -134,8 +147,9 @@ public class MorraCinese {
 		myGame.startGame(bufferReader);
 		while (true) {
 			myGame.makeMyChoice();
-			if (myGame.getYourChoice(bufferReader) == 'Q')
+			if (myGame.getYourChoice(bufferReader) == 'Q') {
 				break;
+			}	
 			myGame.winner();
 		}
 		System.out.println("Grazie per aver giocato");

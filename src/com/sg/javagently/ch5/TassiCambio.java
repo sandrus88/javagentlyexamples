@@ -23,11 +23,14 @@ class TassiCambio {
 		System.out.println("Graz\t in\t valgono");
 		for (;;) {
 			try {
+				System.out.println("Inserisci un valore");
 				amount = Text.readDouble(bufferReaderCambio);
-
+				System.out.println("Valore inserito: " + amount);
 				boolean found = false;
 				while (!found) {
+					System.out.println("inserisci un carattere tra Y, $, D, F");
 					c = Text.readChar(bufferReaderCambio);
+					System.out.println("carattere inserito: " + c);
 					Text.prompt("\t\t");
 					switch (c) {
 					case 'Y':
@@ -48,7 +51,11 @@ class TassiCambio {
 					}
 					found = (c == 'Y' | c == '$' | c == 'D' | c == 'F');
 				}
-				// System.out.print(Text.writeDouble(amount/factor, 8,3));
+				
+				double d = amount / factor;
+				System.out.println("valore da formattare: " + d);
+				String dFormatted = Text.writeDouble(d, 8, 3);
+				System.out.print("valore formattato: " + dFormatted);
 				switch (c) {
 				case 'Y':
 					System.out.println("yen");
@@ -63,9 +70,10 @@ class TassiCambio {
 					System.out.println("franchi");
 					break;
 				}
-			} catch (EOFException e) {
-
+			} catch (Exception e) {
+				System.out.println("Errore : " + e.getMessage());
 			}
+			System.out.println();
 		}
 	}
 }
