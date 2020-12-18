@@ -66,7 +66,7 @@ System.out.print.ln("fascia = " + nome);
 
 ```
 - Il `break` come ultima istruzione del blocco `case` permette al blocco di esecuzione di uscire dallo `switch`. La mancanza della keyword `break` in uno dei `case`, fa si che l'esecuzione prosegua in tutti i casi sottostanti fino al case di `default`.
-- Se dovessimo rappresentare la stessa logica dello switch con if-else, sarebbe la seguente:
+- Se dovessimo rappresentare la stessa logica dello `switch` con `if-else`, sarebbe la seguente:
 
 ```
 int mese = 3;
