@@ -59,7 +59,7 @@ public class MyClass {
 		   break;
 	case "03": nome = "Marzo";
 		   break;
-	default:nome = "Altri mesi";
+	default: nome = "Altri mesi";
 	}
 	System.out.print.ln("fascia = " + nome);
 	}
