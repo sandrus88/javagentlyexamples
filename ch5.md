@@ -54,11 +54,11 @@ public class MyClass {
 
 	switch (mese) {
 	case "01": nome = "Gennaio" ;
-		  break;
+		   break;
 	case "02": nome = "Febbraio" ;
-		  break;
+		   break;
 	case "03": nome = "Marzo";
-		  break;
+		   break;
 	default:nome = "Altri mesi";
 	}
 	System.out.print.ln("fascia = " + nome);
