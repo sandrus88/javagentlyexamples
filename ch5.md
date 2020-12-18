@@ -52,15 +52,15 @@ public class MyClass {
 	String mese = "02";
 	String nome;
 
-	switch (mese) {
-	case "01": nome = "Gennaio" ;
-		   break;
-	case "02": nome = "Febbraio" ;
-		   break;
-	case "03": nome = "Marzo";
-		   break;
-	default: nome = "Altri mesi";
-	}
+		switch (mese) {
+		case "01": nome = "Gennaio" ;
+		   	break;
+		case "02": nome = "Febbraio" ;
+		   	break;
+		case "03": nome = "Marzo";
+		   	break;
+		default: nome = "Altri mesi";
+		}
 	System.out.print.ln("fascia = " + nome);
 	}
 }
