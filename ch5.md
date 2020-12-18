@@ -53,13 +53,13 @@ public class MyClass {
 	String nome;
 
 		switch (mese) {
-		case "01": nome = "Gennaio" ;
+			case "01": nome = "Gennaio" ;
 		   	break;
-		case "02": nome = "Febbraio" ;
+			case "02": nome = "Febbraio" ;
 		   	break;
-		case "03": nome = "Marzo";
+			case "03": nome = "Marzo";
 		   	break;
-		default: nome = "Altri mesi";
+			default: nome = "Altri mesi";
 		}
 	System.out.print.ln("fascia = " + nome);
 	}
