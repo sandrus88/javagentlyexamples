@@ -34,9 +34,9 @@ Esempio:
 ```
 switch (condizione) { 
 	case 1: istruzione1; 
-				break; 
+			break; 
 	case 2: istruzione2; 
-				break; 
+			break; 
 	... 
 	default: istruzione_default; 
 }
@@ -54,12 +54,12 @@ public class MyClass {
 
 	switch (mese) {
 	case "01":	nome = "Gennaio" ;
-				break;
+			break;
 	case "02":	nome = "Febbraio" ;
-				break;
+			break;
 	case "03":	nome = "Marzo";
-				break;
-	default: 	nome = "Altri mesi";
+			break;
+	default: nome = "Altri mesi";
 	}
 	System.out.print.ln("fascia = " + nome);
 	}
