@@ -90,14 +90,11 @@ public class MorraCinese {
 
 	void winner() {
 		switch (myChoice) {
-		case 0:
-			report('R', 'S', 'P');
+		case 0:	report('R', 'S', 'P');
 			break;
-		case 1:
-			report('S', 'P', 'R');
+		case 1:	report('S', 'P', 'R');
 			break;
-		case 2:
-			report('P', 'R', 'S');
+		case 2:	report('P', 'R', 'S');
 			break;
 		}
 	}
