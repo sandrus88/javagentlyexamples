@@ -23,7 +23,7 @@ Esempio:
 ```
 do {
 	blocco codice da eseguire
-}while(condizione);
+} while(condizione);
 ```
 
 #### 2. Istruzione switch
