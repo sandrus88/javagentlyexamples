@@ -57,14 +57,14 @@ public class MyClass {
 
 		switch (mese) {
 			case "01": 
-				nome = "Gennaio" ;
-		   	break;
+				nome = "Gennaio";
+				break;
 			case "02": 
-				nome = "Febbraio" ;
-		   	break;
+				nome = "Febbraio";
+				break;
 			case "03": 
 				nome = "Marzo";
-		   	break;
+				break;
 			default: 
 				nome = "Altri mesi";
 		}
