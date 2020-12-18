@@ -34,9 +34,9 @@ Esempio:
 ```
 switch (condizione) { 
 	case 1: istruzione1; 
-		break; 
+	break; 
 	case 2: istruzione2; 
-		break; 
+	break; 
 	... 
 	default: istruzione_default; 
 }
