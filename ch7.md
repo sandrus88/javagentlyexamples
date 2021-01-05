@@ -84,7 +84,7 @@ stampera' a video
 
 ```
 10000€ // java formattera' la valuta in base alla localizzazione del computeru
-```#### 4. Date, calendari e orarii
+````#### 4. Date, calendari e orarii
 Per creare date, calendari e orari si usano le classi `Date` e `Calendar`, la quale possiede valori costanti per giorni, mesi, anni ma anche per ore, minuti e secondi.</br>
 La formattazione delle date avviene tramite la classe `DateFormat` del package `java.text` e puo' essere `DEFAULT`, `FULL`, `LONG`, `MEDIUM`, `SHORT`.
 
