@@ -1,6 +1,6 @@
 # Index
 1. Stringhe
-2. Tokenizer
+2. Tokens
 3. Formattazione numeri tramite java.text
 4. Date, calendari e orari
 
@@ -122,4 +122,4 @@ Oggi e' il giorno 5 gennaio 2021
 Oggi e' il giorno 5-gen-2021
 
 Oggi e' il giorno 05/01/21
-``` 
+``` 
