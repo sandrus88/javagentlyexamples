@@ -26,7 +26,7 @@ I modificatori, non tutti, possono essere attribuiti sia a classi che ai membri 
 `static`, puo' essere riferito a classi di primo livello e non alle classi interne (vedi punto 5), riferito ai membri significa che sono accessibili mediante il nome della classe.
 
 #### 2. Proprieta' degli oggetti
-Un oggetto, una volta creato, occupa un determinato spazio in memoria. Esso, a differenza delle variabili create che sono memorizzate con il loro valore effettivo, rappresenta solo un riferimento (`reference`) di tutto cio' che e' incapsulato nella classe, di cui l'oggetto e'istanza.</br>
+Un oggetto, una volta creato, occupa un determinato spazio in memoria. Esso, a differenza delle variabili create che sono memorizzate con il loro valore effettivo, rappresenta solo un riferimento (`reference`) di tutto cio' che e' incapsulato nella classe, di cui l'oggetto e' istanza.</br>
 A riguardo dati due oggetti:
 
 ```
@@ -35,7 +35,7 @@ class MyObject{
 	public static void main(String[] args) {
 	
 	MyObject obj = new MyObject();
-	MyObject object = new MyObject;
+	MyObject object = new MyObject();
 	}
 }	
 ```
