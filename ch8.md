@@ -100,7 +100,7 @@ class MyClass  {
 		// codice
 	} 
 ```
-`Classi locali`, sono classi definite all'interno di un blocco specifico (metodo etc);
+`Classi locali`, sono classi definite all'interno di un blocco specifico;
 
 ```
 class MyClass  {
