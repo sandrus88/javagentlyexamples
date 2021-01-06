@@ -11,7 +11,8 @@ public class StringExample {
 		String frase = "ciao";
 		char[] caracters = frase.toCharArray();
 		for (int i = 0; i < caracters.length; i++) {
-			System.out.println("Questo e' il carattere della posizione " + "'" + i + "'" + " della frase ciao " + caracters[i]);
+			System.out.println(
+					"Questo e' il carattere della posizione " + "'" + i + "'" + " della frase ciao " + caracters[i]);
 		}
 		System.out.println();
 
@@ -26,33 +27,40 @@ public class StringExample {
 		System.out.println("Questa e' la comparazione tra la sottostringa e la frase " + frase.equals(small));
 		System.out.println("Questa e' la comparazione tra la sottostringa e la frase " + frase.compareTo(small));
 		System.out.println();
-		
+
 		String s = "Questo e' l'ombellico del mondo";
 		StringTokenizer token = new StringTokenizer(s);
-		while(token.hasMoreTokens()) {
+		while (token.hasMoreTokens()) {
 			System.out.println(token.nextToken());
 		}
-		
+		System.out.println();
+
+		String[] arr = s.split(" ");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
+		System.out.println();
+
 		Date today = new Date();
 		DateFormat dFull = DateFormat.getDateInstance(DateFormat.FULL);
 		System.out.println("Oggi e' il giorno " + dFull.format(today.getTime()));
 		System.out.println();
-		
+
 		DateFormat dDefault = DateFormat.getDateInstance(DateFormat.DEFAULT);
 		System.out.println("Oggi e' il giorno " + dDefault.format(today.getTime()));
 		System.out.println();
-		
+
 		DateFormat dLong = DateFormat.getDateInstance(DateFormat.LONG);
 		System.out.println("Oggi e' il giorno " + dLong.format(today.getTime()));
 		System.out.println();
-		
+
 		DateFormat dMedium = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		System.out.println("Oggi e' il giorno " + dMedium.format(today.getTime()));
 		System.out.println();
-		
+
 		DateFormat dShort = DateFormat.getDateInstance(DateFormat.SHORT);
 		System.out.println("Oggi e' il giorno " + dShort.format(today.getTime()));
 		System.out.println();
-		
+
 	}
 }

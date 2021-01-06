@@ -37,9 +37,9 @@ Il seguente codice dividera' la stringa, in piu' stringhe tante quante sono le p
 ```
 String s4 = "Questo e' l'ombellico del mondo";
 StringTokenizer token = new StringTokenizer(s4);
-	while(token.hasMoreTokens()) {
-		System.out.println(token.nextToken());
-	}
+while(token.hasMoreTokens()) {
+	System.out.println(token.nextToken());
+}
 ```
 che stampera' a video
 
@@ -84,7 +84,8 @@ stampera' a video
 
 ```
 10000€ // java formattera' la valuta in base alla localizzazione del computer
-````
+````
+
 #### 4. Date, calendari e orarii
 Per creare date, calendari e orari si usano le classi `Date` e `Calendar`, la quale possiede valori costanti per giorni, mesi, anni ma anche per ore, minuti e secondi.</br>
 La formattazione delle date avviene tramite la classe `DateFormat` del package `java.text` e puo' essere `DEFAULT`, `FULL`, `LONG`, `MEDIUM`, `SHORT`.
@@ -123,4 +124,5 @@ Oggi e' il giorno 5 gennaio 2021
 Oggi e' il giorno 5-gen-2021
 
 Oggi e' il giorno 05/01/21
-``` 
+``` 
+
