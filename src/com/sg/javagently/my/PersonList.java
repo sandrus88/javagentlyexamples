@@ -30,7 +30,7 @@ package com.sg.javagently.my;
 
 public class PersonList {
 
-	Node firstElement, actual, prec;
+	Node firstElement;
 
 	PersonList(Node node) {
 		this.firstElement = node;
@@ -44,7 +44,7 @@ public class PersonList {
 			return;
 		}
 
-		actual = firstElement;// crea un puntatore che punta al primo elemento della lista
+		Node actual = firstElement;// crea un puntatore che punta al primo elemento della lista
 		while (actual.next != null) {
 			actual = actual.next; // Sposta il puntatore al prossimo elemento
 			if (actual.next == null) { // se actual e' l'ultimo elemento della lista
@@ -63,48 +63,58 @@ public class PersonList {
 		firstElement = newNode;
 	}
 
-	public void findElement(String nomePersona) {
-		actual = firstElement;
+	public Person findElement(String nomePersona) {
+		Node actual = firstElement;
 		while (actual != null) {
 
 			if ((actual.element.nome.equals(nomePersona)) || (actual.element.cognome.equals(nomePersona))) {
-				System.out.println("Hai trovato il nodo " + actual);
-				break;
+				return actual.element;
+
 			} else {
 				actual = actual.next;
 			}
 		}
 		if (actual == null) {
-			System.out.println("Non hai trovato nessun nodo. Riprova!");
+			System.out.println("Non hai trovato nessuna persona. Riprova!");
 		}
+		return null;
 	}
 
-	public void removeElement(String removePersona) {
-		actual = firstElement;
-		prec = firstElement;
+	public boolean removeElement(String removePersona) {
+		Node actual = firstElement;
+		Node prec = firstElement;
 		while (actual != null) {
 			if ((actual.element.nome.equals(removePersona)) || (actual.element.cognome.equals(removePersona))) {
-				if (prec == null) {
-					firstElement = actual.next;
-				} else {
-					prec.next = actual.next;
-				}
-				System.out.println("Hai rimosso il nodo " + actual);
+				prec = actual;
 				break;
 			} else {
 				actual = actual.next;
 			}
 
 		}
-
+		return true;
 	}
 
-	public void printList() {
-		actual = firstElement;
+	public int size() {
+		Node actual = firstElement;
+		int size = 0;
 		while (actual != null) {
-			System.out.println("La lista aggiornata e' " + actual);
-			break;
+			size++;
+			actual = actual.next;
 		}
+		return size;
+	}
+
+	public String printList() {
+		Node actual = firstElement;
+		String s = "";
+		while (actual != null) {
+			String s1 = actual.element.nome + ", " + actual.element.cognome + " -> ";
+			s = s.concat(s1);
+			actual = actual.next;
+		}
+		return s;
+
 	}
 
 	public String toString() {
@@ -160,16 +170,19 @@ public class PersonList {
 		System.out.println("Quarto nodo aggiunto in testa lista " + list);
 		System.out.println();
 
-		list.printList();
+		list.findElement("Ermal");
+		System.out.println("Hai trovato la persona " + list.findElement("Ermal"));
 		System.out.println();
-
-		list.findElement("Sandro");
-		System.out.println();
-
-		list.removeElement("Aida");
-		System.out.println();
+		
+//		list.removeElement("Aida");
+//		System.out.println();
 
 		list.printList();
+		System.out.println("La lista aggiornata e' " + list.printList());
+		System.out.println();
+		
+		list.size();
+		System.out.println("Attualmente la lista e' formata da " + list.size() + " nodi");
 
 	}
 }
