@@ -28,11 +28,11 @@ package com.sg.javagently.my;
  * }
  */
 
-public class PersonList {
+public class PersonListImpl implements PersonList {
 
 	Node firstElement;
 
-	PersonList(Node node) {
+	PersonListImpl(Node node) {
 		this.firstElement = node;
 	}
 
@@ -66,33 +66,29 @@ public class PersonList {
 	public Person findElement(String nomePersona) {
 		Node actual = firstElement;
 		while (actual != null) {
-
 			if ((actual.element.nome.equals(nomePersona)) || (actual.element.cognome.equals(nomePersona))) {
 				return actual.element;
-
 			} else {
 				actual = actual.next;
 			}
 		}
-		if (actual == null) {
-			System.out.println("Non hai trovato nessuna persona. Riprova!");
-		}
-		return null;
+		
+		throw new IllegalArgumentException("Persona " + nomePersona + " non trovato");
 	}
 
 	public boolean removeElement(String removePersona) {
 		Node actual = firstElement;
-		Node prec = firstElement;
+		Node prec = null;
 		while (actual != null) {
 			if ((actual.element.nome.equals(removePersona)) || (actual.element.cognome.equals(removePersona))) {
-				prec = actual;
-				break;
+				prec.next = actual.next;
+				return true;
 			} else {
+				prec = actual;
 				actual = actual.next;
 			}
-
 		}
-		return true;
+		return false;
 	}
 
 	public int size() {
@@ -105,16 +101,19 @@ public class PersonList {
 		return size;
 	}
 
-	public String printList() {
+	public void printList() {
 		Node actual = firstElement;
-		String s = "";
+		String rv = "";
+		final String separator = " -> ";
 		while (actual != null) {
-			String s1 = actual.element.nome + ", " + actual.element.cognome + " -> ";
-			s = s.concat(s1);
+			String s1 = actual.element.nome + ", " + actual.element.cognome;
+			rv = rv + s1;
 			actual = actual.next;
+			if (actual != null) {
+				rv = rv + separator;
+			}
 		}
-		return s;
-
+		System.out.println("PersonList: " + rv);
 	}
 
 	public String toString() {
@@ -150,36 +149,33 @@ public class PersonList {
 //
 //		System.out.println(n4);
 
-		PersonList list = new PersonList(new Node(new Person("Sandro", "Gargano"), null));
+		PersonListImpl list = new PersonListImpl(new Node(new Person("Sandro", "Gargano"), null));
 		System.out.println("Creazione di una lista " + list);
-		System.out.println();
 
 		list.addLast(new Person("Andrea", "Ruggieri"));
 		System.out.println("Primo nodo aggiunto alla fine della lista " + list);
-		System.out.println();
 
 		list.addLast(new Person("Ermal", "Aliraj"));
 		System.out.println("Secondo nodo aggiunto alla fine della lista " + list);
-		System.out.println();
-
+		
 		list.addFirst(new Person("Aida", "Xhaxho"));
 		System.out.println("Terzo nodo aggiunto in testa lista " + list);
-		System.out.println();
-
+		
 		list.addFirst(new Person("Armela", "Xhaxho"));
 		System.out.println("Quarto nodo aggiunto in testa lista " + list);
-		System.out.println();
-
-		list.findElement("Ermal");
-		System.out.println("Hai trovato la persona " + list.findElement("Ermal"));
-		System.out.println();
 		
-//		list.removeElement("Aida");
-//		System.out.println();
-
+		
+		try {
+			Person p = list.findElement("Ermal2");			
+			System.out.println("Hai trovato la persona " + p);
+		} catch (IllegalArgumentException e) {
+			System.out.println("Non ho trovato");
+		}
+		
+		boolean isRemoved = list.removeElement("Aida");		
+		System.out.println("Ho rimosso la persona Aida? " + isRemoved );
+		
 		list.printList();
-		System.out.println("La lista aggiornata e' " + list.printList());
-		System.out.println();
 		
 		list.size();
 		System.out.println("Attualmente la lista e' formata da " + list.size() + " nodi");

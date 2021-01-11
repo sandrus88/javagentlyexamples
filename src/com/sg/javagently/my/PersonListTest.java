@@ -10,7 +10,7 @@ public class PersonListTest {
 
     @Test
     public void test_find() {
-        PersonList list = new PersonList(new PersonList.Node(new Person("Sandro", "Gargano"), null));
+        PersonListImpl list = new PersonListImpl(new PersonListImpl.Node(new Person("Sandro", "Gargano"), null));
         Person p = list.findElement("Sandro");
         assertNotNull(p);
         assertEquals(p.nome, "Sandro");
@@ -19,7 +19,7 @@ public class PersonListTest {
 
     @Test
     public void test_addLast() {
-        PersonList list = new PersonList(new PersonList.Node(new Person("Sandro", "Gargano"), null));
+        PersonListImpl list = new PersonListImpl(new PersonListImpl.Node(new Person("Sandro", "Gargano"), null));
         list.addLast(new Person("Andrea", "Ruggieri"));
         assertEquals(2, list.size());
 
@@ -29,7 +29,7 @@ public class PersonListTest {
 
     @Test
     public void test_removeElement_inTheMiddle() {
-        PersonList list = new PersonList(new PersonList.Node(new Person("Sandro", "Gargano"), null));
+        PersonListImpl list = new PersonListImpl(new PersonListImpl.Node(new Person("Sandro", "Gargano"), null));
         list.addLast(new Person("Andrea", "Ruggieri"));
         list.addLast(new Person("Ermal", "Aliraj"));
 
@@ -39,7 +39,7 @@ public class PersonListTest {
 
     @Test
     public void test_removeElement_last() {
-        PersonList list = new PersonList(new PersonList.Node(new Person("Sandro", "Gargano"), null));
+        PersonListImpl list = new PersonListImpl(new PersonListImpl.Node(new Person("Sandro", "Gargano"), null));
         list.addLast(new Person("Andrea", "Ruggieri"));
         list.addLast(new Person("Ermal", "Aliraj"));
 
@@ -49,7 +49,7 @@ public class PersonListTest {
 
     @Test
     public void test_removeElement_top() {
-        PersonList list = new PersonList(new PersonList.Node(new Person("Sandro", "Gargano"), null));
+        PersonListImpl list = new PersonListImpl(new PersonListImpl.Node(new Person("Sandro", "Gargano"), null));
         list.addLast(new Person("Andrea", "Ruggieri"));
         list.addLast(new Person("Ermal", "Aliraj"));
 
