@@ -56,9 +56,6 @@ public class PersonListImpl implements PersonList {
 	}
 
 	public void addFirst(Person element) {
-//		Node newNode = new Node(element, null);// nuovo nodo da inserire alla lista
-//		newNode.next = list;
-//		list = newNode;
 		Node newNode = new Node(element, firstElement);
 		firstElement = newNode;
 	}
@@ -72,21 +69,27 @@ public class PersonListImpl implements PersonList {
 				actual = actual.next;
 			}
 		}
-		
+
 		throw new IllegalArgumentException("Persona " + nomePersona + " non trovato");
 	}
 
 	public boolean removeElement(String removePersona) {
 		Node actual = firstElement;
 		Node prec = null;
+		int index = 0;
 		while (actual != null) {
 			if ((actual.element.nome.equals(removePersona)) || (actual.element.cognome.equals(removePersona))) {
-				prec.next = actual.next;
+				if (index == 0) {// primo elemento
+					firstElement = firstElement.next;
+				} else {// tutti gli altri elementi
+					prec.next = actual.next;
+				}
 				return true;
 			} else {
 				prec = actual;
 				actual = actual.next;
 			}
+			index++;
 		}
 		return false;
 	}
@@ -121,8 +124,8 @@ public class PersonListImpl implements PersonList {
 	}
 
 	static class Node {
-		private Person element;
-		private Node next;
+		Person element;
+		Node next;
 
 		Node(Person el, Node n) {
 			element = el;
@@ -157,28 +160,49 @@ public class PersonListImpl implements PersonList {
 
 		list.addLast(new Person("Ermal", "Aliraj"));
 		System.out.println("Secondo nodo aggiunto alla fine della lista " + list);
-		
+
 		list.addFirst(new Person("Aida", "Xhaxho"));
 		System.out.println("Terzo nodo aggiunto in testa lista " + list);
-		
+
 		list.addFirst(new Person("Armela", "Xhaxho"));
 		System.out.println("Quarto nodo aggiunto in testa lista " + list);
-		
-		
+
 		try {
-			Person p = list.findElement("Ermal2");			
+			Person p = list.findElement("Ermal2");
 			System.out.println("Hai trovato la persona " + p);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Non ho trovato");
 		}
-		
-		boolean isRemoved = list.removeElement("Aida");		
-		System.out.println("Ho rimosso la persona Aida? " + isRemoved );
-		
+
+		boolean isRemoved = list.removeElement("Sandro");
+		System.out.println("Ho rimosso la persona Sandro? " + isRemoved);
+
 		list.printList();
-		
+
 		list.size();
 		System.out.println("Attualmente la lista e' formata da " + list.size() + " nodi");
 
+		System.out.println("La posizione attuale e' " + list.get(2));
+
+	}
+
+	@Override
+	public Person get(int index) {
+		Node actual = firstElement;
+		int actualIndex = 0;
+		while (actual != null) {
+			if (actualIndex == index) {
+				return actual.element;
+			}
+			actual = actual.next;
+			actualIndex++;
+		}
+		return null;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		Node actual = firstElement;
+		return actual == null;
 	}
 }

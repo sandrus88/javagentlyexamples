@@ -2,15 +2,19 @@ package com.sg.javagently.my;
 
 public interface PersonList {
 	
-	public void addFirst(Person element);
+	boolean isEmpty();
 	
-	public void addLast(Person element);
+	void addFirst(Person element);
 	
-	public Person findElement(String nomePersona);
+	void addLast(Person element);
 	
-	public boolean removeElement(String removePersona);
+	Person findElement(String nomePersona);
 	
-	public int size();
+	boolean removeElement(String removePersona);
+	
+	int size();
 
-	public void printList();
+	void printList();
+
+	Person get(int index);
 }

@@ -3,8 +3,7 @@
 2. Proprieta' degli oggetti
 3. Liste concatenate
 4. Classi interne
-ToString serve per rappresentare l'oggetto come una stringa.
-Ritorna una stringa con la rappresentazione dell'oggetto, di solito si accodano tutte le variabili d'istanza
+
 # Descrizione
 
 #### 1. Oggetti e modificatori

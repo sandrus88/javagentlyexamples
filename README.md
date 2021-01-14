@@ -10,3 +10,4 @@ In questo progetto cerchero' di fare un riassunto dei concetti presenti nel libr
 * [Capitolo 6](ch6.md)
 * [Capitolo 7](ch7.md)
 * [Capitolo 8](ch8.md)
+* [Capitolo 9](ch9.md)
