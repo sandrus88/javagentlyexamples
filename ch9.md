@@ -88,14 +88,17 @@ class Erbivori {
 	}
 }
 
-class Elefanti etxends Erbivori { {	
+class Elefanti etxends Erbivori {
+	
 	int zanne;	
 	Elefanti(String n, int w, int z){
 	super(n, w)
-	zanne = z;;	super.doveAbito;
+	zanne = z;
+	super.doveAbito;
 	}
 }
 ````
+
 #### 4. Classi e metodi astratti
 Una classe astratta e' una classe che contiene almeno un metodo astratto. Si dichiara con la keyword `abstract`. Non puo' essere istanziata. Per istanziarla bisogna che tutte le sottoclassi implementino tali metodi.
 Un metodo astratto e' un metodo di cui si specifica solo il nome e gli eventuali parametri.
@@ -103,24 +106,20 @@ Un metodo astratto e' un metodo di cui si specifica solo il nome e gli eventuali
 ```
 public abstract class AbstractClass {
 	String nome;
-
 	public abstract String lavora();
-
 	public void astraction() {
 
 	}
-
+	
 	public static void main(String[] args) {
 		AbstractClass abClass = new ConcreteClass();
 	}
 }
 
 class ConcreteClass extends AbstractClass {
-
 	public String lavora() {
 		// codice da eseguire
 		return null;
 	}
-
 }
 	
