@@ -12,7 +12,8 @@ class TableInt {
 
 		BufferedReader bufferReader = Text.open(System.in);
 		for (int i = 0; i < 10; i++) {
-			t[i] = new OurInteger(Text.readInt(bufferReader));
+			int intVal = Text.readInt(bufferReader);
+			t[i] = new OurInteger(intVal);
 		}
 
 		System.out.println("Prima dell'ordinamento");
@@ -31,24 +32,5 @@ class TableInt {
 			System.out.println(t[i] + " ");
 			System.out.println();
 		}
-	}
-
-	class OurInteger implements OrdinamentoI {
-		int val;
-
-		public OurInteger(int i) {
-			val = i;
-		}
-
-		@Override
-		public boolean lessThan(OrdinamentoI a) {
-			OurInteger i = (OurInteger) a;
-			return val < i.val;
-		}
-
-		public String toString() {
-			return String.valueOf(val);
-		}
-
 	}
 }
