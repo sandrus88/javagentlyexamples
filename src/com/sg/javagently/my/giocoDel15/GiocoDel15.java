@@ -10,15 +10,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Arrays;
 import java.util.Random;
+
+import com.sg.javagently.my.SGUtil;
 
 public class GiocoDel15 extends Frame {
 
 	private Button chiudi;
 	private Button nuovaPartita;
-	private Button bottoniGioco[];
-	private String bottoniNumeri[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14",
-			"15" };
+	private Button bottoni[];
+	private String numeri[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "" };
 
 	public GiocoDel15() {
 		Panel titolo = new Panel();
@@ -30,21 +32,19 @@ public class GiocoDel15 extends Frame {
 		Panel pannelloBottoniGioco = new Panel();
 		GridLayout layout = new GridLayout(4, 4);
 		pannelloBottoniGioco.setLayout(layout);
-		bottoniGioco = new Button[16];
-		for (int i = 0; i < 16; i++) {
-			if (i == 15) {
-				Button bottoneVuoto = new Button();
-				bottoniGioco[i] = bottoneVuoto;
-				bottoneVuoto.setBackground(Color.red);
-				pannelloBottoniGioco.add(bottoneVuoto);
-			} else {
-				bottoniGioco[i] = new Button();
-				bottoniGioco[i].setLabel(bottoniNumeri[i]);
-				bottoniGioco[i].setBackground(Color.blue);
-				bottoniGioco[i].addActionListener(new ButtonActionListener());
-				pannelloBottoniGioco.add(bottoniGioco[i]);
-			}
+		bottoni = new Button[16];
+		for (int i = 0; i < 15; i++) {
+			bottoni[i] = new Button();
+			bottoni[i].setLabel(numeri[i]);
+			bottoni[i].setBackground(Color.blue);
+			bottoni[i].addActionListener(new ButtonActionListener());
+			pannelloBottoniGioco.add(bottoni[i]);
 		}
+		Button bottoneVuoto = new Button();
+		bottoni[15] = bottoneVuoto;
+		bottoneVuoto.setBackground(Color.red);
+		pannelloBottoniGioco.add(bottoneVuoto);
+
 		add("Center", pannelloBottoniGioco);
 
 		Panel pannelloBottoniUscitaENuovaPartita = new Panel();
@@ -65,42 +65,31 @@ public class GiocoDel15 extends Frame {
 		});
 	}
 
+	private void mixNumbers() {
+		for (int i = 0; i < 100; i++) {
+			Random rd = new Random();
+			int firstIndex = rd.nextInt(16);
+			int secondIndex = rd.nextInt(16);
+
+			String temp = numeri[firstIndex];
+			numeri[firstIndex] = numeri[secondIndex];
+			numeri[secondIndex] = temp;
+		}
+		SGUtil.printArray(numeri);
+	}
+
 	class NuovaPartitaListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// scambiare i numeri dei bottoni
-			// andare a pescare a caso un elemento dell'array bottoniNumeri:
-			// 1. prendo un indice a caso tra 0 e 15
-			// 2. leggo il valore presente nella posizione del punto 1.
-			// e metterlo al label del bottone
+			mixNumbers();
 
-			// A) mischiare gli elementi dell'array bottoniNumeri
-			// selezionare a caso due indici e scambiarli con gli elementi dell'array
-			// 1. prendi due indici a caso tra 0 e 15
-			// 2. scambiare i valori dell'array in quei indici
-			// 3. ripeti questa operazione 100 volte. Signidìfica che avremo l'array dei
-			// numeri
-			// mischiati
-			// B) popola i bottoni leggendo glie elementi dall'array mischiato
-
-//			for (int i = 0; i < bottoniGioco.length; i++) {
-//				Random rd = new Random();
-//				int randomPosition = rd.nextInt(15);// valore a caso tra 0 e 15
-//				String v = bottoniNumeri[randomPosition];
-//				System.out.println("randomposition: " + randomPosition + " valore: " + v);
-//				bottoniGioco[i].setLabel(v);
-//			}
-
-			for (int i = 0; i < 100; i++) {
-				Random rd = new Random();
-				int randomPosition = rd.nextInt(15);
-				int secondRandomPosition = rd.nextInt(15);
-//				System.out.println("randomposition: " + randomPosition + " secondRandomPosition " + secondRandomPosition);
-				String temp = bottoniNumeri[randomPosition]; 
-	            bottoniNumeri[randomPosition] = bottoniNumeri[secondRandomPosition];
-	            bottoniNumeri[secondRandomPosition] = temp;
-	            System.out.println("randomposition: " + randomPosition + " valore: " + temp + " secondRandomPosition " + secondRandomPosition + " valore: " + temp);
-	            bottoniGioco[randomPosition].setLabel(temp);
+			for (int i = 0; i < 16; i++) {
+				bottoni[i].setLabel(numeri[i]);
+				if (numeri[i].equals("")) {
+					bottoni[i].setBackground(Color.red);
+				} else {
+					bottoni[i].setBackground(Color.blue);
+				}
 			}
 		}
 	}
@@ -110,6 +99,7 @@ public class GiocoDel15 extends Frame {
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Ho cliccato il bottone " + e);
 		}
+
 	}
 
 	public static void main(String[] args) {
