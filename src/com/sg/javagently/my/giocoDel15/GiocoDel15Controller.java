@@ -1,13 +1,23 @@
 package com.sg.javagently.my.giocoDel15;
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Random;
 
 public class GiocoDel15Controller {
-	private String numeri[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "" };
+	private String numeri[] = new String[16];
 	private boolean isFinish;
+
+	public GiocoDel15Controller() {
+		for (int i = 0; i < 16; i++) {
+			numeri[i] =  (i + 1) + "";
+			if (i==15) {
+				numeri[i] =  "";
+			}
+		}
+	}
+
+	public GiocoDel15Controller(String[] a) {
+		numeri = a;
+	}
 
 	public void setNumeri(String[] arrStr) {
 		this.numeri = arrStr;
@@ -15,6 +25,14 @@ public class GiocoDel15Controller {
 
 	public String[] getNumeri() {
 		return numeri;
+	}
+
+	public void setIsFinish(boolean b) {
+		this.isFinish = b;
+	}
+
+	public boolean getIsFinish() {
+		return isFinish;
 	}
 
 	void mixNumbers() {
@@ -61,21 +79,6 @@ public class GiocoDel15Controller {
 	}
 
 	/**
-	 * Aggiorna i labels dei bottoni riportando i valori dell'array numeri
-	 */
-	void updateButtonLabels() {
-		int indexVuoto = getVuoto();
-		for (int i = 0; i < 16; i++) {
-			bottoni[i].setLabel(numeri[i]);
-			if (i == indexVuoto) {
-				bottoni[i].setBackground(Color.red);
-			} else {
-				bottoni[i].setBackground(Color.blue);
-			}
-		}
-	}
-
-	/**
 	 * Ritorna true se il valore presente all'indice passato come parametro e'
 	 * adiacente al valore vuoto.
 	 * 
@@ -86,25 +89,19 @@ public class GiocoDel15Controller {
 	 * @return true se l'indice passato come parametro e' adiacente all'indice del
 	 *         valore vuoto.
 	 */
-//	      {"7", "6", "15", "13",
-//		   "3", "5", "12", "" ,
-//		   "11", "14", "8", "4",
-//		   "9", "2", "10", "1"};
 	boolean isAdjacent(int index) {
-		int indexVuoto = getVuoto();// posizione 7 dara' true se index sara' l' indice dei valori 13 o 12 o
+		int indexVuoto = getVuoto();
 		if (index % 4 == 0) {
-			if (indexVuoto == index - 4 || indexVuoto == index + 1 || indexVuoto == index + 4) {// 0, 4, 8, 12, colonna
-																								// sinistra
+			if (indexVuoto == index - 4 || indexVuoto == index + 1 || indexVuoto == index + 4) {
 				return true;
 			}
 		} else if (index % 4 == 3) {
-			if (indexVuoto == index - 4 || indexVuoto == index - 1 || indexVuoto == index + 4) {// 3, 7, 11 ,15, colonna
-																								// destra
+			if (indexVuoto == index - 4 || indexVuoto == index - 1 || indexVuoto == index + 4) {
 				return true;
 			}
 		} else {
 			if (indexVuoto == index - 4 || indexVuoto == index + 4 || indexVuoto == index - 1
-					|| indexVuoto == index + 1) { // altrimenti i valori degli indici in mezzo
+					|| indexVuoto == index + 1) {
 				return true;
 			}
 		}
@@ -122,67 +119,10 @@ public class GiocoDel15Controller {
 				"" };
 
 		for (int i = 0; i < 16; i++) {
-			if (numeri[i] != finalNumeri[i]) {
+			if (!numeri[i].equals(finalNumeri[i])) {
 				return false;
 			}
 		}
 		return true;
-	}
-
-	class NuovaPartitaListener implements ActionListener {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			isFinish = false;
-			mixNumbers();
-			label.setText("Metti i numeri in modo crescente");
-
-			for (int i = 0; i < 16; i++) {
-				bottoni[i].setEnabled(true);
-				bottoni[i].setLabel(numeri[i]);
-				if (numeri[i].equals("")) {
-					bottoni[i].setBackground(Color.red);
-				} else {
-					bottoni[i].setBackground(Color.blue);
-				}
-			}
-		}
-	}
-
-	class ButtonActionListener implements ActionListener {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if (!isFinish) {
-				int indexCliccato = getIndiceCliccato(e);
-				if (isAdjacent(indexCliccato)) {
-					scambia(indexCliccato);
-					updateButtonLabels();
-					isFinish = isFinish();
-					if (isFinish()) {
-						label.setText("    H   A   I             V   I   N   T   O  !  !  !");
-					}
-					// questo modo non ci piace invece di disattivare tutti i bottoni quando sono
-					// in questo punto del sistema salverei questo stato in una variabile isFinish
-					// quindi farei la logica dell actionperformed ( dei bottoni) solo se isFinish
-					// e' false
-
-					// una volta stabilito che sei nello stato isFinish (218) oltre a cambiare il
-					// label
-					// dovresti fare in modo che da questo momento in poi a ogni click del bottone
-					// non accada nulla
-				}
-			}
-		}
-
-		private int getIndiceCliccato(ActionEvent e) {
-			int indexCliccato = 0;
-			for (int i = 0; i < 16; i++) {
-				if (e.getSource() == bottoni[i]) {
-					bottoni[i].setLabel(numeri[i]);
-					indexCliccato = i;// prendere dalla e l'indice cliccato
-				}
-			}
-			return indexCliccato;
-		}
-
 	}
 }
