@@ -3,15 +3,15 @@ package com.sg.javagently.my.giocoDel15;
 import java.util.Random;
 
 public class GiocoDel15Controller {
+	final String finalNumeri[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15",
+	"" };
+	
 	private String numeri[] = new String[16];
 	private boolean isFinish;
-
+	
 	public GiocoDel15Controller() {
-		for (int i = 0; i < 16; i++) {
-			numeri[i] =  (i + 1) + "";
-			if (i==15) {
-				numeri[i] =  "";
-			}
+		for(int i = 0; i < numeri.length; i++) {
+			numeri[i] = finalNumeri[i];
 		}
 	}
 
@@ -115,9 +115,6 @@ public class GiocoDel15Controller {
 	 *         maniera crescente
 	 */
 	public boolean isFinish() {
-		final String finalNumeri[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15",
-				"" };
-
 		for (int i = 0; i < 16; i++) {
 			if (!numeri[i].equals(finalNumeri[i])) {
 				return false;

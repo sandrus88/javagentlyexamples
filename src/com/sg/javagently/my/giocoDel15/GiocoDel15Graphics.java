@@ -85,7 +85,6 @@ public class GiocoDel15Graphics extends Frame {
 					controller.scambia(indexCliccato);
 					updateButtonLabels();
 					controller.setIsFinish(controller.isFinish());
-					controller.getIsFinish();
 					if (controller.getIsFinish()) {
 						label.setText("    H   A   I             V   I   N   T   O  !  !  !");
 					}
