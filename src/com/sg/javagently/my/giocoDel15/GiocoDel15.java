@@ -64,7 +64,7 @@ public class GiocoDel15 extends Frame {
 		});
 	}
 
-	void updateButtonLabels() {
+	public void updateButtonLabels() {
 		int indexVuoto = controller.getVuoto();
 		for (int i = 0; i < 16; i++) {
 			bottoni[i].setLabel(controller.getNumeri()[i]);

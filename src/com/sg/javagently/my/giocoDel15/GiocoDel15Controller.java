@@ -35,7 +35,7 @@ public class GiocoDel15Controller {
 		return isFinish;
 	}
 
-	void mixNumbers() {
+	public void mixNumbers() {
 		for (int i = 0; i < 100; i++) {
 			Random rd = new Random();
 			int firstIndex = rd.nextInt(16);
@@ -53,7 +53,7 @@ public class GiocoDel15Controller {
 	 * 
 	 * @return l'indice del bottone vuoto
 	 */
-	int getVuoto() {
+	public int getVuoto() {
 		int indexVuoto = 0;
 		for (int i = 0; i < 16; i++) {
 			if (numeri[i].equals("")) {
@@ -69,7 +69,7 @@ public class GiocoDel15Controller {
 	 * 
 	 * @param index, indice da scambiare con il valore vuoto
 	 */
-	void scambia(int index) {
+	public void scambia(int index) {
 		for (int i = 0; i < 16; i++) {
 			int valoreVuoto = getVuoto();
 			String temp = numeri[index];
@@ -89,7 +89,7 @@ public class GiocoDel15Controller {
 	 * @return true se l'indice passato come parametro e' adiacente all'indice del
 	 *         valore vuoto.
 	 */
-	boolean isAdjacent(int index) {
+	public boolean isAdjacent(int index) {
 		int indexVuoto = getVuoto();
 		if (index % 4 == 0) {
 			if (indexVuoto == index - 4 || indexVuoto == index + 1 || indexVuoto == index + 4) {
