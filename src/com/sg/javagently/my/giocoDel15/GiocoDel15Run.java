@@ -7,7 +7,7 @@ import java.awt.event.WindowEvent;
 public class GiocoDel15Run {
 
 	public static void main(String[] args) {
-		Frame f = new GiocoDel15();
+		Frame f = new GiocoDel15Graphics();
 ////		String arr[] = { "7", "5", "11", "3", "9", "", "10", "2", "9", "10", "11", "12", "13", "14", "15", "" };
 ////		Frame f = new GiocoDel15(arr);
 		f.setTitle("Gioco del Quindici");
@@ -19,5 +19,4 @@ public class GiocoDel15Run {
 			}
 		});
 	}
-
 }
