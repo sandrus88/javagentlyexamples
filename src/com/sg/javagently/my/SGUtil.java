@@ -25,4 +25,16 @@ public class SGUtil {
 		}
 		return s;
 	}
+	
+	public static void printList(String[] arr) {
+		final String separator = "\n";
+		for (int i = 0; i < arr.length; i++) {
+			if (i == arr.length - 1) {
+				System.out.print(arr[i]);
+			} else {
+				System.out.print(arr[i] + separator);
+			}
+		}
+		System.out.println();
+	}
 }
